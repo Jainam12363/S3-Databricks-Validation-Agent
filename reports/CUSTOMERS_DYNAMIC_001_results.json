@@ -1,0 +1,201 @@
+{
+    "validation_id": "CUSTOMERS_DYNAMIC_001",
+    "dataset_name": "customers",
+    "summary": {
+        "total_checks": 5,
+        "passed_checks": 0,
+        "failed_checks": 5,
+        "total_findings": 10,
+        "category_counts": {
+            "record_count": 1,
+            "missing_records": 1,
+            "extra_records": 1,
+            "target_duplicates": 1,
+            "null_values": 2,
+            "data_type_validation": 1,
+            "column_value_comparison": 3
+        },
+        "severity_counts": {
+            "HIGH": 4,
+            "CRITICAL": 3,
+            "MEDIUM": 3
+        },
+        "findings": [
+            {
+                "category": "record_count",
+                "description": "Source has 10 records; target has 11 records.",
+                "severity": "HIGH"
+            },
+            {
+                "category": "missing_records",
+                "record_key": 104,
+                "primary_key": "customer_id",
+                "description": "Missing Records: customer_id = 104",
+                "customer_id": 104,
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "extra_records",
+                "record_key": 111,
+                "primary_key": "customer_id",
+                "description": "Extra Records: customer_id = 111",
+                "customer_id": 111,
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "target_duplicates",
+                "record_key": 107,
+                "primary_key": "customer_id",
+                "description": "Target Duplicates: customer_id = 107",
+                "customer_id": 107,
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "null_values",
+                "record_key": 106,
+                "primary_key": "customer_id",
+                "column": "email",
+                "issue": "NULL_OR_EMPTY",
+                "customer_id": 106,
+                "description": "Null Values: customer_id = 106 - email",
+                "severity": "HIGH"
+            },
+            {
+                "category": "null_values",
+                "record_key": 109,
+                "primary_key": "customer_id",
+                "column": "balance",
+                "issue": "NULL_OR_EMPTY",
+                "customer_id": 109,
+                "description": "Null Values: customer_id = 109 - balance",
+                "severity": "HIGH"
+            },
+            {
+                "category": "data_type_validation",
+                "record_key": 109,
+                "primary_key": "customer_id",
+                "column": "balance",
+                "invalid_value": "INVALID",
+                "customer_id": 109,
+                "description": "Data Type Validation: customer_id = 109 - balance",
+                "severity": "HIGH"
+            },
+            {
+                "category": "column_value_comparison",
+                "record_key": 103,
+                "primary_key": "customer_id",
+                "column": "balance",
+                "source_value": "3000.00",
+                "target_value": "3500.00",
+                "occurrence": 1,
+                "customer_id": 103,
+                "description": "Column Value Comparison: customer_id = 103 - balance",
+                "severity": "MEDIUM"
+            },
+            {
+                "category": "column_value_comparison",
+                "record_key": 106,
+                "primary_key": "customer_id",
+                "column": "email",
+                "source_value": "riya@example.com",
+                "target_value": "None",
+                "occurrence": 1,
+                "customer_id": 106,
+                "description": "Column Value Comparison: customer_id = 106 - email",
+                "severity": "MEDIUM"
+            },
+            {
+                "category": "column_value_comparison",
+                "record_key": 109,
+                "primary_key": "customer_id",
+                "column": "balance",
+                "source_value": "12000.00",
+                "target_value": "None",
+                "occurrence": 1,
+                "customer_id": 109,
+                "description": "Column Value Comparison: customer_id = 109 - balance",
+                "severity": "MEDIUM"
+            }
+        ],
+        "overall_status": "FAILED"
+    },
+    "validation_results": [
+        {
+            "check": "record_count",
+            "source_count": 10,
+            "target_count": 11,
+            "passed": false
+        },
+        {
+            "check": "primary_key",
+            "primary_key": "customer_id",
+            "missing_records": [
+                104
+            ],
+            "extra_records": [
+                111
+            ],
+            "source_duplicates": [],
+            "target_duplicates": [
+                107
+            ]
+        },
+        {
+            "check": "null_values",
+            "issues": [
+                {
+                    "record_key": 106,
+                    "primary_key": "customer_id",
+                    "column": "email",
+                    "issue": "NULL_OR_EMPTY"
+                },
+                {
+                    "record_key": 109,
+                    "primary_key": "customer_id",
+                    "column": "balance",
+                    "issue": "NULL_OR_EMPTY"
+                }
+            ]
+        },
+        {
+            "check": "data_type_validation",
+            "issues": [
+                {
+                    "record_key": 109,
+                    "primary_key": "customer_id",
+                    "column": "balance",
+                    "invalid_value": "INVALID"
+                }
+            ]
+        },
+        {
+            "check": "column_value_comparison",
+            "issues": [
+                {
+                    "record_key": 103,
+                    "primary_key": "customer_id",
+                    "column": "balance",
+                    "source_value": "3000.00",
+                    "target_value": "3500.00",
+                    "occurrence": 1
+                },
+                {
+                    "record_key": 106,
+                    "primary_key": "customer_id",
+                    "column": "email",
+                    "source_value": "riya@example.com",
+                    "target_value": "None",
+                    "occurrence": 1
+                },
+                {
+                    "record_key": 109,
+                    "primary_key": "customer_id",
+                    "column": "balance",
+                    "source_value": "12000.00",
+                    "target_value": "None",
+                    "occurrence": 1
+                }
+            ]
+        }
+    ]
+}

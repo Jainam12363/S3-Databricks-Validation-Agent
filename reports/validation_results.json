@@ -1,0 +1,168 @@
+{
+    "summary": {
+        "total_checks": 5,
+        "passed_checks": 0,
+        "failed_checks": 5,
+        "total_findings": 10,
+        "category_counts": {
+            "record_count": 1,
+            "missing_records": 1,
+            "extra_records": 1,
+            "target_duplicates": 1,
+            "null_values": 2,
+            "data_type_validation": 1,
+            "column_value_comparison": 3
+        },
+        "severity_counts": {
+            "HIGH": 4,
+            "CRITICAL": 3,
+            "MEDIUM": 3
+        },
+        "findings": [
+            {
+                "category": "record_count",
+                "description": "Source has 10 records; target has 11 records.",
+                "severity": "HIGH"
+            },
+            {
+                "category": "missing_records",
+                "customer_id": 104,
+                "description": "Missing Records: customer 104",
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "extra_records",
+                "customer_id": 111,
+                "description": "Extra Records: customer 111",
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "target_duplicates",
+                "customer_id": 107,
+                "description": "Target Duplicates: customer 107",
+                "severity": "CRITICAL"
+            },
+            {
+                "category": "null_values",
+                "customer_id": 106,
+                "column": "email",
+                "issue": "NULL_OR_EMPTY",
+                "description": "Null Values: customer 106 - email",
+                "severity": "HIGH"
+            },
+            {
+                "category": "null_values",
+                "customer_id": 109,
+                "column": "balance",
+                "issue": "NULL_OR_EMPTY",
+                "description": "Null Values: customer 109 - balance",
+                "severity": "HIGH"
+            },
+            {
+                "category": "data_type_validation",
+                "customer_id": 109,
+                "column": "balance",
+                "invalid_value": "INVALID",
+                "description": "Data Type Validation: customer 109 - balance",
+                "severity": "HIGH"
+            },
+            {
+                "category": "column_value_comparison",
+                "customer_id": 103,
+                "column": "balance",
+                "source_value": "3000.00",
+                "target_value": "3500.00",
+                "description": "Column Value Comparison: customer 103 - balance",
+                "severity": "MEDIUM"
+            },
+            {
+                "category": "column_value_comparison",
+                "customer_id": 106,
+                "column": "email",
+                "source_value": "riya@example.com",
+                "target_value": "None",
+                "description": "Column Value Comparison: customer 106 - email",
+                "severity": "MEDIUM"
+            },
+            {
+                "category": "column_value_comparison",
+                "customer_id": 109,
+                "column": "balance",
+                "source_value": "12000.00",
+                "target_value": "None",
+                "description": "Column Value Comparison: customer 109 - balance",
+                "severity": "MEDIUM"
+            }
+        ],
+        "overall_status": "FAILED"
+    },
+    "validation_results": [
+        {
+            "check": "record_count",
+            "source_count": 10,
+            "target_count": 11,
+            "passed": false
+        },
+        {
+            "check": "primary_key",
+            "missing_records": [
+                104
+            ],
+            "extra_records": [
+                111
+            ],
+            "source_duplicates": [],
+            "target_duplicates": [
+                107
+            ]
+        },
+        {
+            "check": "null_values",
+            "issues": [
+                {
+                    "customer_id": 106,
+                    "column": "email",
+                    "issue": "NULL_OR_EMPTY"
+                },
+                {
+                    "customer_id": 109,
+                    "column": "balance",
+                    "issue": "NULL_OR_EMPTY"
+                }
+            ]
+        },
+        {
+            "check": "data_type_validation",
+            "issues": [
+                {
+                    "customer_id": 109,
+                    "column": "balance",
+                    "invalid_value": "INVALID"
+                }
+            ]
+        },
+        {
+            "check": "column_value_comparison",
+            "issues": [
+                {
+                    "customer_id": 103,
+                    "column": "balance",
+                    "source_value": "3000.00",
+                    "target_value": "3500.00"
+                },
+                {
+                    "customer_id": 106,
+                    "column": "email",
+                    "source_value": "riya@example.com",
+                    "target_value": "None"
+                },
+                {
+                    "customer_id": 109,
+                    "column": "balance",
+                    "source_value": "12000.00",
+                    "target_value": "None"
+                }
+            ]
+        }
+    ]
+}

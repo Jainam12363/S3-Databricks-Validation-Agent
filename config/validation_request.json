@@ -1,0 +1,20 @@
+
+{
+    "validation_id": "CUSTOMERS_VALIDATION_001",
+    "dataset_name": "customers",
+
+    "source": {
+        "type": "s3",
+        "bucket": "jai-validation-agent-demo-2026",
+        "object_key": "source/customers_source.csv"
+    },
+
+    "target": {
+        "type": "databricks",
+        "catalog": "workspace",
+        "schema": "default",
+        "table": "customers_target"
+    },
+
+    "validation_rules": "config/validation_rules.json"
+}

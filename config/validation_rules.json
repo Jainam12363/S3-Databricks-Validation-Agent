@@ -1,0 +1,48 @@
+
+{
+    "dataset_name": "customers",
+    "primary_key": "customer_id",
+    "columns": {
+        "customer_id": {
+            "expected_type": "integer",
+            "nullable": false
+        },
+        "first_name": {
+            "expected_type": "string",
+            "nullable": false
+        },
+        "last_name": {
+            "expected_type": "string",
+            "nullable": false
+        },
+        "email": {
+            "expected_type": "string",
+            "nullable": false
+        },
+        "city": {
+            "expected_type": "string",
+            "nullable": false
+        },
+        "balance": {
+            "expected_type": "decimal",
+            "nullable": false
+        },
+        "signup_date": {
+            "expected_type": "date",
+            "nullable": false
+        },
+        "status": {
+            "expected_type": "string",
+            "nullable": false
+        }
+    },
+    "validation_checks": {
+        "record_count": true,
+        "missing_records": true,
+        "extra_records": true,
+        "duplicate_records": true,
+        "null_values": true,
+        "data_type_validation": true,
+        "column_value_comparison": true
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "dataset": "customers",
+    "source_record_count": 10,
+    "target_record_count": 11,
+    "expected_issues": {
+        "missing_records": [
+            104
+        ],
+        "extra_records": [
+            111
+        ],
+        "value_mismatches": [
+            {
+                "customer_id": 103,
+                "column": "balance",
+                "source_value": "3000.00",
+                "target_value": "3500.00"
+            }
+        ],
+        "duplicate_records": [
+            107
+        ],
+        "null_values": [
+            {
+                "customer_id": 106,
+                "column": "email"
+            }
+        ],
+        "invalid_values": [
+            {
+                "customer_id": 109,
+                "column": "balance",
+                "value": "INVALID",
+                "expected_type": "decimal"
+            }
+        ]
+    }
+}

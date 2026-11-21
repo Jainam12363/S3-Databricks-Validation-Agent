@@ -1,0 +1,5 @@
+
+boto3
+databricks-sql-connector
+python-dotenv
+groq
